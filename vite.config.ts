@@ -11,11 +11,6 @@ export default defineConfig({
     },
   },
   css: {
-    // preprocessorOptions: {
-    //   scss: {
-    //     additionalData: `@import "src/styles/scss/main.scss";`,
-    //   },
-    // },
     devSourcemap: true,
   },
   server: {
