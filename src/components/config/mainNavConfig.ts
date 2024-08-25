@@ -1,22 +1,23 @@
-import { RoutePaths, type IMainNavItem, IconNames } from "@/types";
+import { ICON_NAMES, ROUTE_PATHS } from "@/constants";
+import { type IMainNavItem } from "@/types";
 
 export const mainNavConfig: IMainNavItem[] = [
   {
-    icon: IconNames.Home,
+    icon: ICON_NAMES.Home,
     label: "Home",
-    routePath: RoutePaths.Home,
+    routePath: ROUTE_PATHS.Home,
     separator: false,
   },
   {
-    icon: IconNames.Route,
+    icon: ICON_NAMES.Route,
     label: "PageTwo",
-    routePath: RoutePaths.PageTwo,
+    routePath: ROUTE_PATHS.PageTwo,
     separator: false,
   },
   {
-    icon: IconNames.Route,
+    icon: ICON_NAMES.Route,
     label: "PageThree",
-    routePath: RoutePaths.PageThree,
+    routePath: ROUTE_PATHS.PageThree,
     separator: false,
   },
 ];
