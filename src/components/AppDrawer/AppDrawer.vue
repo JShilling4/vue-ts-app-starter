@@ -1,21 +1,43 @@
 <script setup lang="ts">
+import { inject, watch } from "vue";
+import { ILayout } from "@/composables/useLayout";
+import { layoutKey } from "@/utils/symbols";
+
 export type PropTypes = {
-  position?: "left" | "right";
+  modelValue: boolean;
+  side?: "left" | "right";
   width?: string;
 };
 
-withDefaults(defineProps<PropTypes>(), {
-  position: "left",
-  width: "200",
+const props = withDefaults(defineProps<PropTypes>(), {
+  side: "left",
+  width: "13rem",
 });
+
+const $layout = inject<ILayout>(layoutKey) as ILayout;
+
+watch(
+  () => props.width,
+  (newValue) => {
+    $layout.leftDrawer.width = newValue;
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
-  <div class="app-drawer">
-    <aside>
+  <aside :class="['app-drawer', { 'app-drawer--hidden': !props.modelValue }]">
+    <div class="app-drawer__content">
       <slot></slot>
-    </aside>
-  </div>
+    </div>
+  </aside>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-drawer {
+  position: absolute;
+  top: v-bind("$layout.header.height");
+  height: 100%;
+  width: v-bind(width);
+}
+</style>

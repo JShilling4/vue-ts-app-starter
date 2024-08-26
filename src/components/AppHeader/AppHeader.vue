@@ -1,7 +1,25 @@
 <script setup lang="ts">
-// export type PropTypes = {};
+import { ILayout } from "@/composables/useLayout";
+import { layoutKey } from "@/utils/symbols";
+import { inject, watch } from "vue";
 
-// withDefaults(defineProps<PropTypes>(), {});
+export type PropTypes = {
+  height?: string;
+};
+
+const props = withDefaults(defineProps<PropTypes>(), {
+  height: "4rem",
+});
+
+const $layout = inject<ILayout>(layoutKey) as ILayout;
+
+watch(
+  () => props.height,
+  (newValue) => {
+    $layout.header.height = newValue;
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -10,4 +28,10 @@
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-header {
+  width: 100%;
+  height: v-bind(height);
+  z-index: 2000;
+}
+</style>
