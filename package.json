@@ -9,6 +9,7 @@
     "lint": "eslint . --fix --ignore-path .eslintignore"
   },
   "dependencies": {
+    "@vueuse/core": "^11.0.3",
     "axios": "^1.7.5",
     "pinia": "^2.2.2",
     "vue": "^3.4.38",
