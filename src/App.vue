@@ -1,7 +1,16 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { AppLayout } from "@/components/AppLayout";
+import { ViewContainer } from "@/components/ViewContainer";
+</script>
 
 <template>
-  <div>App Layout Here</div>
+  <AppLayout>
+    <ViewContainer>
+      <RouterView />
+    </ViewContainer>
+  </AppLayout>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+@import "./styles/scss/main.scss";
+</style>
