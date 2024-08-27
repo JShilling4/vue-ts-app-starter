@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ILayout } from "@/composables/useLayout";
+import { ILayout } from "@/composables";
 import { layoutKey } from "@/utils/symbols";
 import { inject, watch } from "vue";
 

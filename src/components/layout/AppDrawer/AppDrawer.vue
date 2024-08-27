@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject, watch } from "vue";
-import { ILayout } from "@/composables/useLayout";
+import { ILayout } from "@/composables";
 import { layoutKey } from "@/utils/symbols";
 
 export type PropTypes = {

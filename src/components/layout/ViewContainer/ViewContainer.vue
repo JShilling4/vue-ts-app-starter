@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ILayout } from "@/composables/useLayout";
-import { layoutKey } from "@/utils/symbols";
 import { inject } from "vue";
+import { ILayout } from "@/composables";
+import { layoutKey } from "@/utils/symbols";
 
 export type PropTypes = {
   vPad?: string;
