@@ -8,7 +8,7 @@ export type PropTypes = {
 };
 
 const props = withDefaults(defineProps<PropTypes>(), {
-  height: "4rem",
+  height: "5rem",
 });
 
 const $layout = inject<ILayout>(layoutKey) as ILayout;
@@ -30,10 +30,11 @@ function toggleLeftDrawer() {
   <header class="app-header">
     <div class="fit flex items-center mx-sm">
       <FontAwesomeIcon
+        v-if="!$layout.leftDrawer.isFixed"
         icon="fas fa-bars"
         color="#fff"
         size="2x"
-        class="icon"
+        class="icon left-drawer-toggle"
         @click="toggleLeftDrawer"
       />
     </div>

@@ -7,6 +7,7 @@ export function useLayout() {
     },
     leftDrawer: {
       isVisible: true,
+      isFixed: false,
       width: "",
     },
   });

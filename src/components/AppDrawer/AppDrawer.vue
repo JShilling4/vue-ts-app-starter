@@ -7,11 +7,13 @@ export type PropTypes = {
   modelValue: boolean;
   side?: "left" | "right";
   width?: string;
+  fixed?: boolean;
 };
 
 const props = withDefaults(defineProps<PropTypes>(), {
   side: "left",
   width: "13rem",
+  fixed: false,
 });
 
 const $layout = inject<ILayout>(layoutKey) as ILayout;
@@ -29,6 +31,15 @@ watch(
   (show) => {
     if (show) $layout.leftDrawer.width = props.width;
     else $layout.leftDrawer.width = "0";
+  },
+  { immediate: true }
+);
+
+watch(
+  () => props.fixed,
+  (fix) => {
+    if (fix) $layout.leftDrawer.isFixed = true;
+    else $layout.leftDrawer.isFixed = false;
   },
   { immediate: true }
 );

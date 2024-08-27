@@ -5,5 +5,6 @@ export interface ILayout {
   leftDrawer: {
     isVisible: boolean;
     width: string;
+    isFixed: boolean;
   };
 }
