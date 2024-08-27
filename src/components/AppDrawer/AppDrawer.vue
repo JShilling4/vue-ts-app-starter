@@ -23,21 +23,36 @@ watch(
   },
   { immediate: true }
 );
+
+watch(
+  () => props.modelValue,
+  (show) => {
+    if (show) $layout.leftDrawer.width = props.width;
+    else $layout.leftDrawer.width = "0";
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
   <aside :class="['app-drawer', { 'app-drawer--hidden': !props.modelValue }]">
-    <div class="app-drawer__content">
-      <slot></slot>
-    </div>
+    <div class="app-drawer__content"></div>
   </aside>
 </template>
 
 <style lang="scss" scoped>
 .app-drawer {
-  position: absolute;
+  position: fixed;
   top: v-bind("$layout.header.height");
-  height: 100%;
+  left: v-bind("side === 'left' ? 0 : 'initial'");
+  right: v-bind("side === 'right' ? 0 : 'initial'");
+  height: calc(100vh - 5rem);
   width: v-bind(width);
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+
+  &--hidden {
+    width: 0;
+  }
 }
 </style>

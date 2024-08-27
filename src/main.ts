@@ -1,10 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "@/router";
-import "@/styles/scss/main.scss";
-
+import { initFaLibrary, FontAwesomeIcon } from "@/plugins/fontAwesome";
 const app = createApp(App);
 
-app.use(router);
+initFaLibrary();
 
+app.use(router);
+app.component("FontAwesomeIcon", FontAwesomeIcon);
 app.mount("#app");

@@ -12,9 +12,7 @@ const appHeight = computed(() => {
   return `calc(100vh - ${$layout.header.height})`;
 });
 
-onMounted(() => {
-  console.log(appHeight.value);
-});
+onMounted(() => {});
 </script>
 
 <template>
@@ -34,6 +32,9 @@ body {
 }
 #app {
   height: 100%;
-  width: 100%;
+  width: v-bind(appHeight);
+}
+.icon {
+  cursor: pointer;
 }
 </style>

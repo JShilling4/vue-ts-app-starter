@@ -20,16 +20,30 @@ watch(
   },
   { immediate: true }
 );
+
+function toggleLeftDrawer() {
+  $layout.leftDrawer.isVisible = !$layout.leftDrawer.isVisible;
+}
 </script>
 
 <template>
   <header class="app-header">
-    <slot></slot>
+    <div class="fit flex items-center mx-sm">
+      <FontAwesomeIcon
+        icon="fas fa-bars"
+        color="#fff"
+        size="2x"
+        class="icon"
+        @click="toggleLeftDrawer"
+      />
+    </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
 .app-header {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: v-bind(height);
   z-index: 2000;
