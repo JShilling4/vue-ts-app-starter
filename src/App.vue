@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { provide } from "vue";
-import { AppLayout } from "@/components/AppLayout";
-import { ViewContainer } from "@/components/ViewContainer";
+import { AppLayout } from "@/components/layout/AppLayout";
+import { ViewContainer } from "@/components/layout/ViewContainer";
 import { useLayout } from "@/composables/useLayout";
 import { layoutKey } from "@/utils/symbols";
 
@@ -27,8 +27,5 @@ body {
 #app {
   height: 100%;
   width: 100%;
-}
-.icon {
-  cursor: pointer;
 }
 </style>

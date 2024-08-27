@@ -1,9 +1,9 @@
 export const ICON_NAMES = {
-  Home: "house",
-  Menu: "menu",
-  Close: "close",
-  Route: "directions",
-  Settings: "settings",
+  Home: "",
+  Menu: "fas fa-bars",
+  Close: "",
+  Route: "",
+  Settings: "",
 } as const;
 
 type IconNameKey = keyof typeof ICON_NAMES;

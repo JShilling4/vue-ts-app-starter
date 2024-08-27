@@ -12,7 +12,7 @@ export type PropTypes = {
 
 const props = withDefaults(defineProps<PropTypes>(), {
   side: "left",
-  width: "13rem",
+  width: "15rem",
   fixed: false,
 });
 
