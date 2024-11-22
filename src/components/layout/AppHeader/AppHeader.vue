@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { AppIcon } from "@/components/ui";
 import { ILayout } from "@/composables";
+import { ICON_NAMES } from "@/constants";
 import { layoutKey } from "@/utils/symbols";
 import { inject, watch } from "vue";
 
@@ -20,11 +22,25 @@ watch(
   },
   { immediate: true }
 );
+
+function toggleLeftDrawer() {
+  $layout.leftDrawer.isVisible = !$layout.leftDrawer.isVisible;
+}
 </script>
 
 <template>
   <header class="app-header">
-    <slot></slot>
+    <div class="fit flex items-center px-sm">
+      <AppIcon
+        v-if="!$layout.leftDrawer.isFixed"
+        :name="ICON_NAMES.Menu"
+        color="#fff"
+        size="2x"
+        class="left-drawer-toggle"
+        @click="toggleLeftDrawer"
+      />
+      <div class="ml-sm text-white">App Name</div>
+    </div>
   </header>
 </template>
 
