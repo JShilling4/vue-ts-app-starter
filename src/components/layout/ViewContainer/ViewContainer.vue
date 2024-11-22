@@ -3,15 +3,10 @@ import { inject } from "vue";
 import { ILayout } from "@/composables";
 import { layoutKey } from "@/utils/symbols";
 
-export type PropTypes = {
+const { vPad = "2rem", hPad = "2rem" } = defineProps<{
   vPad?: string;
   hPad?: string;
-};
-
-withDefaults(defineProps<PropTypes>(), {
-  vPad: "2rem",
-  hPad: "2rem",
-});
+}>();
 
 const $layout = inject<ILayout>(layoutKey) as ILayout;
 </script>

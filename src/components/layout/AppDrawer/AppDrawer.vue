@@ -3,23 +3,22 @@ import { inject, watch } from "vue";
 import { ILayout } from "@/composables";
 import { layoutKey } from "@/utils/symbols";
 
-export type PropTypes = {
+const {
+  modelValue,
+  side = "left",
+  width = "15rem",
+  fixed = false,
+} = defineProps<{
   modelValue: boolean;
   side?: "left" | "right";
   width?: string;
   fixed?: boolean;
-};
-
-const props = withDefaults(defineProps<PropTypes>(), {
-  side: "left",
-  width: "15rem",
-  fixed: false,
-});
+}>();
 
 const $layout = inject<ILayout>(layoutKey) as ILayout;
 
 watch(
-  () => props.width,
+  () => width,
   (newValue) => {
     $layout.leftDrawer.width = newValue;
   },
@@ -27,16 +26,16 @@ watch(
 );
 
 watch(
-  () => props.modelValue,
+  () => modelValue,
   (show) => {
-    if (show) $layout.leftDrawer.width = props.width;
+    if (show) $layout.leftDrawer.width = width;
     else $layout.leftDrawer.width = "0";
   },
   { immediate: true }
 );
 
 watch(
-  () => props.fixed,
+  () => fixed,
   (fix) => {
     if (fix) $layout.leftDrawer.isFixed = true;
     else $layout.leftDrawer.isFixed = false;
@@ -46,7 +45,7 @@ watch(
 </script>
 
 <template>
-  <aside :class="['app-drawer', { 'app-drawer--hidden': !props.modelValue }]">
+  <aside :class="['app-drawer', { 'app-drawer--hidden': !modelValue }]">
     <div class="app-drawer__content"></div>
   </aside>
 </template>

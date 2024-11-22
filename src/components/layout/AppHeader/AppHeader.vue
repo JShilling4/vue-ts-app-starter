@@ -5,18 +5,12 @@ import { ICON_NAMES } from "@/constants";
 import { layoutKey } from "@/utils/symbols";
 import { inject, watch } from "vue";
 
-export type PropTypes = {
-  height?: string;
-};
-
-const props = withDefaults(defineProps<PropTypes>(), {
-  height: "5rem",
-});
+const { height = "5rem" } = defineProps<{ height?: string }>();
 
 const $layout = inject<ILayout>(layoutKey) as ILayout;
 
 watch(
-  () => props.height,
+  () => height,
   (newValue) => {
     $layout.header.height = newValue;
   },
