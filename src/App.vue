@@ -17,7 +17,7 @@ provide(layoutKey, $layout);
 </template>
 
 <style lang="scss">
-@import "./styles/scss/main.scss";
+@use "./styles/scss/main.scss";
 
 html,
 body {
