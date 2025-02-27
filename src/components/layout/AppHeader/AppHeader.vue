@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AppIcon } from "@/components/ui";
 import { ILayout } from "@/composables";
 import { ICON_NAMES } from "@/constants";
 import { layoutKey } from "@/utils/symbols";

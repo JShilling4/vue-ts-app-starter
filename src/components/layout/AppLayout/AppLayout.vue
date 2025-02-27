@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { inject } from "vue";
-import { AppDrawer, AppHeader } from "@/components/layout";
 import { layoutKey } from "@/utils/symbols";
 import { type ILayout } from "@/composables";
 

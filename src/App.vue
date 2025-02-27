@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { provide } from "vue";
-import { AppLayout, ViewContainer } from "@/components/layout";
 import { useLayout } from "@/composables";
 import { layoutKey } from "@/utils/symbols";
 
