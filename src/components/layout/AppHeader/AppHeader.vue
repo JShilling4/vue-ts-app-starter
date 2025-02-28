@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ILayout } from "@/composables";
+import { type ILayout } from "@/composables";
 import { ICON_NAMES } from "@/constants";
 import { layoutKey } from "@/utils/symbols";
-import { inject, watch } from "vue";
 
 const { height = "5rem" } = defineProps<{ height?: string }>();
 

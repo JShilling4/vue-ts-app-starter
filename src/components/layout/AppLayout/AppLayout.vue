@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { inject } from "vue";
 import { layoutKey } from "@/utils/symbols";
 import { type ILayout } from "@/composables";
 
