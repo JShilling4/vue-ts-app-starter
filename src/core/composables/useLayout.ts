@@ -1,5 +1,3 @@
-import { reactive } from "vue";
-
 export function useLayout() {
   const layout = reactive({
     header: {
@@ -13,3 +11,5 @@ export function useLayout() {
   });
   return { layout };
 }
+
+export default useLayout;

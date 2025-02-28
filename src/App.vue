@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import { provide } from "vue";
-import { useLayout } from "@/composables";
-import { layoutKey } from "@/utils/symbols";
+import { useLayout } from "@/core/composables";
+import { layoutKey } from "@/core/models";
 
 const { layout: $layout } = useLayout();
 provide(layoutKey, $layout);

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { type ILayout } from "@/composables";
-import { ICON_NAMES } from "@/constants";
-import { layoutKey } from "@/utils/symbols";
+import { layoutKey, ICON_NAMES, type ILayout } from "@/core/models";
 
 const { height = "5rem" } = defineProps<{ height?: string }>();
 
@@ -23,7 +21,7 @@ function toggleLeftDrawer() {
 <template>
   <header class="app-header">
     <div class="fit flex items-center px-sm">
-      <AppIcon
+      <BaseIcon
         v-if="!$layout.leftDrawer.isFixed"
         :name="ICON_NAMES.Menu"
         color="#fff"

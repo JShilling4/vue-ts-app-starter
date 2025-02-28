@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { type ILayout } from "@/composables";
-import { layoutKey } from "@/utils/symbols";
+import { layoutKey, type ILayout } from "@/core/models";
 
 const {
   modelValue,

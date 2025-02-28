@@ -1,20 +1,26 @@
-import Home from "@/views/HomeView.vue";
+import Home from "@/views/Home.vue";
 import { RouteRecordRaw } from "vue-router";
 
+// Type definitions
+export const ROUTE_PATHS = {
+  Home: "/",
+} as const;
+
+type RoutePathKey = keyof typeof ROUTE_PATHS;
+export type RoutePath = (typeof ROUTE_PATHS)[RoutePathKey];
+
+export const ROUTE_NAMES: Record<RoutePathKey, string> = {
+  Home: "Home",
+} as const satisfies Record<RoutePathKey, string>;
+
+type RouteNameKey = keyof typeof ROUTE_NAMES;
+export type RouteName = (typeof ROUTE_NAMES)[RouteNameKey];
+
+// Routes
 export const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Wizard",
+    path: ROUTE_PATHS.Home,
+    name: ROUTE_NAMES.Home,
     component: Home,
-  },
-  {
-    path: "/page2",
-    name: "PageTwo",
-    component: () => import("@/views/PageTwo.vue"),
-  },
-  {
-    path: "/page3",
-    name: "PageThree",
-    component: () => import("@/views/PageThree.vue"),
   },
 ];
