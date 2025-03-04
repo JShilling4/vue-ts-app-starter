@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { layoutKey, type ILayout } from "@/core/models/layout";
+import { layoutKey, type ILayout } from "@/core/models";
 
 const $layout = inject<ILayout>(layoutKey) as ILayout;
 </script>

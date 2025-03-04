@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useLayout } from "@/core/composables";
 import { layoutKey } from "@/core/models";
 
 const { layout: $layout } = useLayout();

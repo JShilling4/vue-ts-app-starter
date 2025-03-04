@@ -9,7 +9,7 @@ export const ROUTE_PATHS = {
 type RoutePathKey = keyof typeof ROUTE_PATHS;
 export type RoutePath = (typeof ROUTE_PATHS)[RoutePathKey];
 
-export const ROUTE_NAMES: Record<RoutePathKey, string> = {
+export const ROUTE_NAMES = {
   Home: "Home",
 } as const satisfies Record<RoutePathKey, string>;
 

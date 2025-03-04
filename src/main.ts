@@ -1,7 +1,7 @@
 import App from "./App.vue";
 import router from "@/router";
-import { initFaLibrary, FontAwesomeIcon } from "@/plugins/fontAwesome";
-import pinia from "@/store";
+import { initFaLibrary, FontAwesomeIcon } from "@/plugins/font-awesome";
+import pinia from "@/plugins/pinia";
 
 const app = createApp(App);
 
